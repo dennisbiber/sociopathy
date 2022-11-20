@@ -126,8 +126,8 @@ def sensitizeJson(talkingBotName, botChangeValue, entity, struct, botPrint = Fal
 
 def main():
     startTime = time.time()
-    botUno = SocioBot(getDOB(time.time() - startTime), "botuno", 1, trainingFile = filenameUno)
-    botDose = SocioBot(getDOB(time.time() - startTime), "botdose", 0, trainingFile = filenameDose)
+    botUno = SocioBot(getDOB(time.time() - startTime), "Truman Demiskil", 1, trainingFile = filenameUno)
+    botDose = SocioBot(getDOB(time.time() - startTime), "Pauly ReMisdaree", 0, trainingFile = filenameDose)
     fileDir = "/home/dbiber/data/sociopathy"
     botNames = [botUno, botDose]
 
