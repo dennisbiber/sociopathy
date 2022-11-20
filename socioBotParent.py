@@ -18,6 +18,7 @@ class SocioBot(object):
         self._dob = dob
         self._name = name
         self._timeMod = timeMod
+        self._nueralTree = {}
         if trainingFile != None:
             self._trainingFile = trainingFile
         else:
@@ -64,6 +65,12 @@ class SocioBot(object):
             self.opinionValue(botName, 0.0)
         return self.opinions[botName]
 
+    def nerualGrowth(self):
+        return {None: None}
+    
+    def defineUndefinedNeuron(self):
+
+
     def fetchLiveFile(self, rootDir):
         return rootDir + "/" + self._liveFileName
 
@@ -82,9 +89,6 @@ class SocioBot(object):
         return None
 
     def fetchBotInfo(self):
-        botInfo = {"botName": self.fetchBotName(),
-                   "dob": self.fetchDOB(),
-                   "opinion": self.opinions}
-        return botInfo
-
-    
+        return {"botName": self.fetchBotName(),
+                "dob": self.fetchDOB(),
+                "opinion": self.opinions}    

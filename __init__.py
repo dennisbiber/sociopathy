@@ -1,0 +1,1 @@
+from .networkModel import NeuralModel  #  noqa

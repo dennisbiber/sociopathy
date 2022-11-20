@@ -18,7 +18,7 @@ vowelsList = ["a", "e", "i", "o", "u", "y"]
 questionWords = ["who", "what", "when", "where", "why", "how"]
 
 
-def openLanguageStruct():
+def openLanguageStruct(filename = filename):
     lingualStructs = None
     with open(filename, "r") as f:
         lingualStructs = json.load(f)
@@ -358,57 +358,6 @@ def isWord(textSegment, words):
     return False
 
 
-def consonantSplit(word):
-    splitIndexes = []
-    wordLen = len(word)
-    lenCount = 0
-    while lenCount < wordLen:
-        if lenCount != 0:
-            if word[lenCount-1] == word[lenCount]:
-                splitIndexes.append(lenCount)
-                break
-            elif word[lenCount-1] in consonantList and word[lenCount] in consonantList:
-                splitIndexes.append(lenCount)
-                break
-        lenCount += 1
-
-    splitCount = 0
-    splitListLength = len(splitIndexes)
-    wordSplits = []
-    while splitCount < splitListLength:
-        wordSplits.append(word[0:splitIndexes[splitCount]])
-        wordSplits.append(word[splitIndexes[splitCount]::])
-        splitCount += 1
-
-    if wordSplits != []:
-        return wordSplits
-    else:
-        return ""
-
-def vowelConsonantSplit(word):
-    splitIndexes = []
-    wordLen = len(word)
-    lenCount = 0
-    while lenCount < wordLen:
-        if word[lenCount-1] in vowelsList and word[lenCount] in consonantList and word[lenCount] not in vowelsList:
-            if lenCount != 0:
-                splitIndexes.append(lenCount)
-        lenCount += 1
-
-    splitCount = 0
-    splitListLength = len(splitIndexes)
-    wordSplits = []
-    while splitCount < splitListLength:
-        wordSplits.append(word[0:splitIndexes[splitCount]])
-        wordSplits.append(word[splitIndexes[splitCount]::])
-        splitCount += 1
-
-    if wordSplits != []:
-        return wordSplits
-    else:
-        return ""
-
-
 def doubleSylabulValidator(word):
 
     stringPatternCheck = getPattern(word)
@@ -427,10 +376,26 @@ def doubleSylabulValidator(word):
     prefixLogic = set(prefixLogic)
 
     suffixLogic = [*suffix.keys()]
+    suffixFound = False
 
-    result = checkForSuffix(word, suffixLogic)
-    if result != None:
-        blob = repeatCheckForStruct(result[0:-1], prefixLogic, wordLogic)
+    wordLen = len(word)
+    loopLen = 0
+    def findWords(loopLen, wordLen, word, wordLogic):
+        while loopLen != wordLen:
+            if word[0:loopLen] in wordLogic and word[loopLen::] in wordLogic:
+                word = [word[0:loopLen], word[loopLen::]]
+                break
+            loopLen += 1
+    item = findWords(loopLen, wordLen, word, wordLogic)
+    if item != None:
+        word = item 
+    if not suffixFound:
+        result = checkForSuffix(word, suffixLogic)
+        suffixFound = True
+    else:
+        result = word
+    if result != word and type(result) == list:
+        blob = repeatCheckForStruct(result[0], prefixLogic, wordLogic)
         if type(blob) == list:
             result[:-1] = blob
         elif type(blob) == str:
@@ -438,7 +403,6 @@ def doubleSylabulValidator(word):
     else:
         blob = repeatCheckForStruct(word, prefixLogic, wordLogic)
         return blob
-        
     if result != None:
         return result
 
