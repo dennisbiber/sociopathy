@@ -1,12 +1,14 @@
 import json
 import numpy
+import os
 import pprint
 import random
 import statistics
 import sys
 import time
 
-filename = "/home/dbiber/data/sociopathy/languageStruct.json"
+HOME_DIR = os.path.expanduser("~")
+filename = HOME_DIR + "/data/sociopathy/languageStruct.json"
 consonantList = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "o", "p", "q",
                   "r", "s", "t", "v", "w", "x", "y", "z"]
 
@@ -227,21 +229,6 @@ def suffixListOrganize(suffixList, textList, textStruct):
             textList, textStruct = Conditon(textList, suffixObject, textStruct, value)
 
     return textList, textStruct
-
-
-def loneVowelHandler(textList, textStruct):
-    if len(textList) == 1 and type(textList) == str:
-        return Conditon(textList, textList[0], textStruct, 0)
-
-
-def sentimentalValuation(text):
-    if type(text) == list:
-        pass
-
-
-def quantify(textStruct):
-    pass
-
 
 
 def Energize(qualities):

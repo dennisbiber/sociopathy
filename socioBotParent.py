@@ -14,15 +14,9 @@ class SocioBot(object):
         # sentimental value (-1=Negative, 0=neutral, 1=positive)
         self.startingSentiment = 0
         self.opinions = {}
-        self._liveFileName = f"{name}_{dob}.json"
         self._dob = dob
         self._name = name
         self._timeMod = timeMod
-        self._nueralTree = {}
-        if trainingFile != None:
-            self._trainingFile = trainingFile
-        else:
-            self._trainingFile = None
 
     def SentimentalThought(self):
         self.sentiment = None
@@ -31,15 +25,15 @@ class SocioBot(object):
         self.logiment = None
 
     def ThoughtSelector(self):
-        changeDegreePercentages = {"negextremal": -0.001,
-                                   "negaradical": -0.021,
-                                   "negaliberal": -0.136,
-                                   "negaconservative": -0.341,
-                                   "preservative": 0,
-                                   "posiconservative": 0.341,
-                                   "posiliberal": 0.136,
-                                   "posiradical": 0.21,
-                                   "posiextremal": 0.001}
+        changeDegreePercentages = {"-e": -0.001,
+                                   "-r": -0.021,
+                                   "-l": -0.136,
+                                   "-c": -0.341,
+                                   "p": 0,
+                                   "+c": 0.341,
+                                   "+l": 0.136,
+                                   "+r": 0.21,
+                                   "+e": 0.001}
 
     def opinionValue(self, botName, value):
         if botName not in self.opinions.keys():
@@ -65,15 +59,6 @@ class SocioBot(object):
             self.opinionValue(botName, 0.0)
         return self.opinions[botName]
 
-    def nerualGrowth(self):
-        return {None: None}
-    
-    def defineUndefinedNeuron(self):
-
-
-    def fetchLiveFile(self, rootDir):
-        return rootDir + "/" + self._liveFileName
-
     def fetchDOB(self):
         return self._dob
 
@@ -82,11 +67,6 @@ class SocioBot(object):
 
     def fetchTimeMod(self):
         return self._timeMod
-
-    def fetchTrainingFile(self):
-        if self._trainingFile != None:
-            return self._trainingFile
-        return None
 
     def fetchBotInfo(self):
         return {"botName": self.fetchBotName(),

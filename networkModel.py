@@ -11,9 +11,11 @@ class NeuralModel(object):
         if self.fetchNeuralTree() == {}:
             return {self.fetchPosiNewKey(): None, self.fetchNegaNewKey(): None}
         posiKey = self.convergePosiNega(self.fetchPosiNewKey() + key)
-        posiKey = self.divergePosiNega(self.fetchPosiNewKey() + key)
+        if posiKey == self.fetchPosiNewKey() + key:
+            posiKey = self.divergePosiNega(self.fetchPosiNewKey() + key)
         negaKey = self.convergePosiNega(self.fetchNegaNewKey() + key)
-        negaKey = self.divergePosiNega(self.fetchNegaNewKey() + key)
+        if negaKey == self.fetchNegaNewKey() + key:
+            negaKey = self.divergePosiNega(self.fetchNegaNewKey() + key)
         return {posiKey: None, negaKey: None}
 
     def triggerUndefinedSearch(self):

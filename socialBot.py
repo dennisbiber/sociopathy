@@ -6,7 +6,7 @@ import random
 import time
 from sociotransmitters import hyphinatedSplit, questionWords, testWordSplitter
 from jsonStructTesting import valueSentence, makeJsonTestAvail
-from socioBotParent import SocioBot
+from botModel import Bot
 from zeroDividerTests import divide
 
 filePresent = False
@@ -126,8 +126,8 @@ def sensitizeJson(talkingBotName, botChangeValue, entity, struct, botPrint = Fal
 
 def main():
     startTime = time.time()
-    botUno = SocioBot(getDOB(time.time() - startTime), "Truman Demiskil", 1, trainingFile = filenameUno)
-    botDose = SocioBot(getDOB(time.time() - startTime), "Pauly ReMisdaree", 0, trainingFile = filenameDose)
+    botUno = Bot(getDOB(time.time() - startTime), "Truman Demiskil", 1, trainingFile = filenameUno)
+    botDose = Bot(getDOB(time.time() - startTime), "Pauly ReMisdaree", 0, trainingFile = filenameDose)
     fileDir = "/home/dbiber/data/sociopathy"
     botNames = [botUno, botDose]
 

@@ -9,9 +9,9 @@ class WordModel(NeuralModel):
         super(WordModel, self).__init__()
         self._prefixes = {"-c": "-de",
                           "+c": "+re",
-                          "c": "com",
+                          "p": "com",
                           "-l": "-mis",
-                          "+l": "pro"}
+                          "+l": "+pro"}
 
     def findUndefined(self, neuron):
         posiKey = False
@@ -44,6 +44,12 @@ class WordModel(NeuralModel):
             else:
                 addon = "con"
             convergedKey = addon + key[6::]
+        if key[0:3] == self._prefixes["+c"] and key[3:7] == self._prefixes["-l"] or key[0:3] == self._prefixes["-c"] and key[3:7] == self._prefixes["+l"]:
+            addon = "anti"
+            convergedKey = addon + key[7::]
+        if key[0:3] == self._prefixes["-c"] and key[3:5] in self._prefixes["p"]:
+            addon = "discon"
+            convergedKey = addon + key[6::]
         return convergedKey
 
     def divergePosiNega(self, key):
@@ -51,10 +57,16 @@ class WordModel(NeuralModel):
         if key[0:3] == key[3:6]:
             if key[0:3] == self._prefixes["-c"]:
                 addon = "mis"
-                divergedKey = addon + key[6::]
+                divergedKey = "-" + addon + key[6::]
             if key[0:3] == self._prefixes["+c"]:
                 addon = "pro"
-                divergedKey = addon + key[6::]
+                divergedKey = "+" + addon + key[6::]
+        if key[0:3] == self._prefixes["-c"] and key[3:7] == self._prefixes["-l"]:
+            addon = "auto"
+            divergedKey = "-" + addon + key[7::]
+        if key[0:3] == self._prefixes["+c"] and key[3:7] == self._prefixes["+l"]:
+            addon = "retro"
+            divergedKey = "+" + addon + key[7::]
         return divergedKey
 
     def postPosiNewKey(self, newKey = None):
