@@ -91,10 +91,14 @@ class Fussion:
                 fields = vector[0:idx+n], vector[idx+n::]
             if returnVector != vector:
                 fields = returnVector
-
             if type(fields) == list or type(fields) == tuple:
-                fieldA = [fields[0]]
-                fieldB = [fields[-1]]
+                # fieldA = [fields[0]]
+                # fieldB = [fields[-1]]
+                if type(fields[0]) == list: 
+                    if [None] in fields[0]: felidA = fields[0]
+                elif  type(fields[-1]) == list:
+                    if[None] in fields[-1]: fieldB = fields[-1]
+                else: fieldB, fieldA = [fields[-1]], [fields[0]]
             else:
                 fieldA = self._fieldA[self._startingCount]
                 fieldB = self._fieldB[self._startingCount]
@@ -115,9 +119,9 @@ class Fussion:
             preDex = idx
             sufDex = idx
         attachedField = self._attachedField[0:preDex] + self._attachedField[sufDex + 1::]
-        if attachedField != ([None], [None]):
+        if attachedField != (None, None):
             attachedField = self.symetricalNegation(idx)
-        if attachedField != ([None], [None]):
+        if attachedField != (None, None):
             attachedField = self.pattern(idx)
         if len(attachedField) == 2:
             _fieldA = attachedField[0]
@@ -141,7 +145,7 @@ class Fussion:
             center = vector[newIdx-2:newIdx+2]
             numbers = []
             for v in range(len(center)):
-                if center[v].isdigit():
+                if center[v].isdigit() and center[v-1] == "-" or center[v].isdigit() and center[v-1] == "+":
                     numbers.append(int(center[v-1:v+1]))
             newValue = sum(numbers)
             if newValue == 0:
@@ -154,7 +158,7 @@ class Fussion:
             elif vector[newIdx].isdigit():
                 newVector = vector[0:newIdx] + vector[newIdx+2::]
                 vectorCheck = self.symetricalNegation(newVector)
-                if vectorCheck == ([None], [None]):
+                if vectorCheck == (None, None):
                     return vector[newIdx-1:newIdx+2], vector[newIdx-1:newIdx+2]
             if vector != self._attachedField:
                 if check != vector:
@@ -168,7 +172,7 @@ class Fussion:
             vector = self._attachedField
         if "0+0" in vector:
             self._attachedField = pattern(self._attachedField, "0+0")
-        if self._attachedField == ([None], [None]):
+        if self._attachedField == (None, None):
             return
         else:
             print("FUCK")
@@ -183,19 +187,19 @@ class Fussion:
         leftSide = attachedField[0:idx]
         rightSide = attachedField[idx::]
         for l, r in zip(leftSide, rightSide[::-1]):
-            if l == [None] and r == [None]:
+            if l == None and r == None:
                 return attachedField
             if l == "+" and r == "-" or l == "-" and r == "+" or l == "o" and r == "-" or l=="-" and r=="o" or \
                 l=="+" and r=="o" or l=="o" and r=="+":
                 pass
             elif l != r:
                 return attachedField
-        return [None], [None]
+        return None, None
 
     def pattern(self, idx):
         idx = self.fetchIdx
         if self._attachedField[0:idx] == "".join(reversed(self._attachedField[idx::])):
-            return [None], [None]
+            return None, None
         else:
             return self._attachedField
 

@@ -57,10 +57,32 @@ class Depiction:
         self._unitsList = []
 
     def getSocioGraph(self):
+        import re
         if len(self._field) == 3:
             return f"{self._field[0]}\n{self._field[1]}\n{self._field[-1]}"
         elif len(self._field) == 2 and type(self._field[0][0]) == list:
-            return f"{self._field[0][0]} | {self._field[-1][0]}\n{self._field[0][1]} | {self._field[-1][1]}\n{self._field[0][-1]} | {self._field[-1][-1]}"
+            f = self._field[0][0][0]
+            s = self._field[0][1][0]
+            t = self._field[0][-1][0]
+
+            # get field lengths
+            if f != None: fLen = len(f)
+            elif f == None: fLen = 4
+            if s != None: sLen = len(s)
+            elif s == None: sLen = 4
+            if t != None: tLen = len(t)
+            elif t == None: tLen = 4
+            maxLen = max(fLen, sLen, tLen)
+            if maxLen % 2 == 1: b = 0 # find space buffer
+            elif maxLen % 1 == 0: b = 1
+            if fLen == maxLen: f = ""
+            else: f = str.ljust(" ", int((maxLen - fLen +b)+2))
+            if sLen == maxLen: s = ""
+            else: s = str.ljust(" ", int((maxLen - sLen +b)+2))
+            if tLen == maxLen: t =""
+            else: t = str.ljust(" ", int((maxLen - tLen +b)+2))
+                        
+            return f"{f}{self._field[0][0]} | {self._field[-1][0]}\n{s}{self._field[0][1]} | {self._field[-1][1]}\n{t}{self._field[0][-1]} | {self._field[-1][-1]}"
 
     def analyzeUnit(self, row):
         unitList = []
@@ -160,8 +182,8 @@ def FusionParticles(spinAlteration = [0, 1, 2, 3], timeValue = 0.25, size = 1, a
          ["integer", "integral"], ["posineutral", "neganeutral"]]
     
     for thing in x:
-        fieldType = RealField(1, size, timeValue, thing[0])
-        fieldType2 = RealField(1, size, timeValue, thing[-1])
+        fieldType = RealField(3, size, timeValue, thing[0])
+        fieldType2 = RealField(2, size, timeValue, thing[-1])
         field1 = fieldType.fetchField
         field2 = fieldType2.fetchField
         depict([field1, field2])
