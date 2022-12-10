@@ -1,0 +1,978 @@
+-------Spin: 0 | 0 :Spin-------
+integer | integer
+['-1+o0o+1-'] | ['-1+o0o+1-']
+       [None] | [None]
+       [None] | [None]
+_____________________
+-------Spin: 0 | 0 :Spin-------
+integral | integral
+[None] | [None]
+_____________________
+-------Spin: 0 | 0 :Spin-------
+neganeutral | neganeutral
+[None] | [None]
+_____________________
+-------Spin: 0 | 0 :Spin-------
+posineutral | posineutral
+[None] | [None]
+_____________________
+-------Spin: 0 | 0 :Spin-------
+integer | neganeutral
+['-1+o0o+1-'] | ['i1-o0o+1i']
+       [None] | [None]
+['-1io0oi1+'] | ['+1oo0oo1-']
+_____________________
+-------Spin: 0 | 0 :Spin-------
+integral | posineutral
+['-1io0o+1i'] | ['o1+o0o-1o']
+['i1+o0o-1i'] | ['-1+o0o-1+']
+['-1oo0oo1+'] | ['-1io0oi1+']
+_____________________
+-------Spin: 0 | 0 :Spin-------
+integer | posineutral
+['-2+'] | ['-2+']
+_____________________
+-------Spin: 0 | 0 :Spin-------
+integral | neganeutral
+['-1io0o+1i'] | ['i1-o0o+1i']
+['i1+o0o-1i'] | ['+1-o0o+1-']
+['-1oo0oo1+'] | ['+1oo0oo1-']
+_____________________
+-------Spin: 0 | 0 :Spin-------
+neganeutral | integer
+['i1-o0o+1i'] | ['-1+o0o+1-']
+       [None] | [None]
+['+1oo0oo1-'] | ['-1io0oi1+']
+_____________________
+-------Spin: 0 | 0 :Spin-------
+posineutral | integral
+['o1+o0o-1o'] | ['-1io0o+1i']
+['-1+o0o-1+'] | ['i1+o0o-1i']
+['-1io0oi1+'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 0 | 0 :Spin-------
+posineutral | integer
+    ['-2+'] | ['-2+']
+[None] | [None]
+[None] | [None]
+_____________________
+-------Spin: 0 | 0 :Spin-------
+neganeutral | integral
+['i1-o0o+1i'] | ['-1io0o+1i']
+['+1-o0o+1-'] | ['i1+o0o-1i']
+['+1oo0oo1-'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 0 | 0 :Spin-------
+integer | integral
+['-1+o0o+1-'] | ['-1io0o+1i']
+['o1+o0o-1o'] | ['i1+o0o-1i']
+['-1io0oi1+'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 0 | 0 :Spin-------
+posineutral | neganeutral
+['o1+o0o-1o'] | ['i1-o0o+1i']
+['-1+o0o-1+'] | ['+1-o0o+1-']
+['-1io0oi1+'] | ['+1oo0oo1-']
+_____________________
+-------Spin: 1 | 0 :Spin-------
+integer | integer
+   ['i1+o0o1i'] | ['-1+o0o+1-']
+       [None] | [None]
+['+1io0o-1i'] | ['-1io0oi1+']
+_____________________
+-------Spin: 1 | 0 :Spin-------
+integral | integral
+['o1+o0o-1o'] | ['-1io0o+1i']
+       [None] | [None]
+['+1io0o-1i'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 1 | 0 :Spin-------
+neganeutral | neganeutral
+['o1-o0o+1o'] | ['i1-o0o+1i']
+       [None] | [None]
+['+1io0oi1-'] | ['+1oo0oo1-']
+_____________________
+-------Spin: 1 | 0 :Spin-------
+posineutral | posineutral
+['i1+o0o-1i'] | ['o1+o0o-1o']
+       [None] | [None]
+['-1oo0oo1+'] | ['-1io0oi1+']
+_____________________
+-------Spin: 1 | 0 :Spin-------
+integer | neganeutral
+   ['i1+o0o1i'] | ['i1-o0o+1i']
+       [None] | [None]
+['+1io0o-1i'] | ['+1oo0oo1-']
+_____________________
+-------Spin: 1 | 0 :Spin-------
+integral | posineutral
+       [None] | [None]
+['i1+o0o-1i'] | ['-1+o0o-1+']
+['+1io0o-1i'] | ['-1io0oi1+']
+_____________________
+-------Spin: 1 | 0 :Spin-------
+integer | posineutral
+   ['i1+o0o1i'] | ['o1+o0o-1o']
+        ['-2+'] | ['-2+']
+['+1io0o-1i'] | ['-1io0oi1+']
+_____________________
+-------Spin: 1 | 0 :Spin-------
+integral | neganeutral
+['o1+o0o-1o'] | ['i1-o0o+1i']
+['i1+o0o-1i'] | ['+1-o0o+1-']
+['+1io0o-1i'] | ['+1oo0oo1-']
+_____________________
+-------Spin: 1 | 0 :Spin-------
+neganeutral | integer
+       [None] | [None]
+       [None] | [None]
+['+1io0oi1-'] | ['-1io0oi1+']
+_____________________
+-------Spin: 1 | 0 :Spin-------
+posineutral | integral
+['i1+o0o-1i'] | ['-1io0o+1i']
+['-1+o0o-1+'] | ['i1+o0o-1i']
+       [None] | [None]
+_____________________
+-------Spin: 1 | 0 :Spin-------
+posineutral | integer
+['i1+o0o-1i'] | ['-1+o0o+1-']
+       [None] | [None]
+['-1oo0oo1+'] | ['-1io0oi1+']
+_____________________
+-------Spin: 1 | 0 :Spin-------
+neganeutral | integral
+['o1-o0o+1o'] | ['-1io0o+1i']
+['+1-o0o+1-'] | ['i1+o0o-1i']
+['+1io0oi1-'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 1 | 0 :Spin-------
+integer | integral
+   ['i1+o0o1i'] | ['-1io0o+1i']
+['o1+o0o-1o'] | ['i1+o0o-1i']
+['+1io0o-1i'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 1 | 0 :Spin-------
+posineutral | neganeutral
+['i1+o0o-1i'] | ['i1-o0o+1i']
+['-1+o0o-1+'] | ['+1-o0o+1-']
+['-1oo0oo1+'] | ['+1oo0oo1-']
+_____________________
+-------Spin: 2 | 0 :Spin-------
+integer | integer
+['+1-o0o-1+'] | ['-1+o0o+1-']
+       [None] | [None]
+['i1+o0o-1i'] | ['-1io0oi1+']
+_____________________
+-------Spin: 2 | 0 :Spin-------
+integral | integral
+['+1io0o-1i'] | ['-1io0o+1i']
+       [None] | [None]
+        ['-2o'] | ['-2o']
+_____________________
+-------Spin: 2 | 0 :Spin-------
+neganeutral | neganeutral
+['+1io0oi1-'] | ['i1-o0o+1i']
+       [None] | [None]
+       [None] | [None]
+_____________________
+-------Spin: 2 | 0 :Spin-------
+posineutral | posineutral
+       [None] | [None]
+       [None] | [None]
+['i1+o0o-1i'] | ['-1io0oi1+']
+_____________________
+-------Spin: 2 | 0 :Spin-------
+integer | neganeutral
+['+1-o0o-1+'] | ['i1-o0o+1i']
+       [None] | [None]
+['i1+o0o-1i'] | ['+1oo0oo1-']
+_____________________
+-------Spin: 2 | 0 :Spin-------
+integral | posineutral
+['+1io0o-1i'] | ['o1+o0o-1o']
+['i1+o0o-1i'] | ['-1+o0o-1+']
+['o1+o0o-1o'] | ['-1io0oi1+']
+_____________________
+-------Spin: 2 | 0 :Spin-------
+integer | posineutral
+       [None] | [None]
+        ['-2+'] | ['-2+']
+['i1+o0o-1i'] | ['-1io0oi1+']
+_____________________
+-------Spin: 2 | 0 :Spin-------
+integral | neganeutral
+['+1io0o-1i'] | ['i1-o0o+1i']
+['i1+o0o-1i'] | ['+1-o0o+1-']
+       [None] | [None]
+_____________________
+-------Spin: 2 | 0 :Spin-------
+neganeutral | integer
+['+1io0oi1-'] | ['-1+o0o+1-']
+       [None] | [None]
+['o1-o0o+1o'] | ['-1io0oi1+']
+_____________________
+-------Spin: 2 | 0 :Spin-------
+posineutral | integral
+['-1oo0oo1+'] | ['-1io0o+1i']
+['-1+o0o-1+'] | ['i1+o0o-1i']
+['i1+o0o-1i'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 2 | 0 :Spin-------
+posineutral | integer
+['-1oo0oo1+'] | ['-1+o0o+1-']
+       [None] | [None]
+['i1+o0o-1i'] | ['-1io0oi1+']
+_____________________
+-------Spin: 2 | 0 :Spin-------
+neganeutral | integral
+['+1io0oi1-'] | ['-1io0o+1i']
+['+1-o0o+1-'] | ['i1+o0o-1i']
+       [None] | [None]
+_____________________
+-------Spin: 2 | 0 :Spin-------
+integer | integral
+['+1-o0o-1+'] | ['-1io0o+1i']
+['o1+o0o-1o'] | ['i1+o0o-1i']
+['i1+o0o-1i'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 2 | 0 :Spin-------
+posineutral | neganeutral
+['-1oo0oo1+'] | ['i1-o0o+1i']
+['-1+o0o-1+'] | ['+1-o0o+1-']
+['i1+o0o-1i'] | ['+1oo0oo1-']
+_____________________
+-------Spin: 3 | 0 :Spin-------
+integer | integer
+['-1io0oi1+'] | ['-1+o0o+1-']
+       [None] | [None]
+['-1io0o+1i'] | ['-1io0oi1+']
+_____________________
+-------Spin: 3 | 0 :Spin-------
+integral | integral
+['-1oo0oo1+'] | ['-1io0o+1i']
+       [None] | [None]
+['-1io0o+1i'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 3 | 0 :Spin-------
+neganeutral | neganeutral
+['+1oo0oo1-'] | ['i1-o0o+1i']
+       [None] | [None]
+['i1-o0o+1i'] | ['+1oo0oo1-']
+_____________________
+-------Spin: 3 | 0 :Spin-------
+posineutral | posineutral
+['-1io0oi1+'] | ['o1+o0o-1o']
+       [None] | [None]
+['o1+o0o-1o'] | ['-1io0oi1+']
+_____________________
+-------Spin: 3 | 0 :Spin-------
+integer | neganeutral
+['-1io0oi1+'] | ['i1-o0o+1i']
+       [None] | [None]
+['-1io0o+1i'] | ['+1oo0oo1-']
+_____________________
+-------Spin: 3 | 0 :Spin-------
+integral | posineutral
+       [None] | [None]
+['i1+o0o-1i'] | ['-1+o0o-1+']
+['-1io0o+1i'] | ['-1io0oi1+']
+_____________________
+-------Spin: 3 | 0 :Spin-------
+integer | posineutral
+['-1io0oi1+'] | ['o1+o0o-1o']
+        ['-2+'] | ['-2+']
+['-1io0o+1i'] | ['-1io0oi1+']
+_____________________
+-------Spin: 3 | 0 :Spin-------
+integral | neganeutral
+['-1oo0oo1+'] | ['i1-o0o+1i']
+['i1+o0o-1i'] | ['+1-o0o+1-']
+['-1io0o+1i'] | ['+1oo0oo1-']
+_____________________
+-------Spin: 3 | 0 :Spin-------
+neganeutral | integer
+['+1oo0oo1-'] | ['-1+o0o+1-']
+       [None] | [None]
+['i1-o0o+1i'] | ['-1io0oi1+']
+_____________________
+-------Spin: 3 | 0 :Spin-------
+posineutral | integral
+['-1io0oi1+'] | ['-1io0o+1i']
+['-1+o0o-1+'] | ['i1+o0o-1i']
+        ['-2o'] | ['-2o']
+_____________________
+-------Spin: 3 | 0 :Spin-------
+posineutral | integer
+['-1io0oi1+'] | ['-1+o0o+1-']
+       [None] | [None]
+['o1+o0o-1o'] | ['-1io0oi1+']
+_____________________
+-------Spin: 3 | 0 :Spin-------
+neganeutral | integral
+['+1oo0oo1-'] | ['-1io0o+1i']
+['+1-o0o+1-'] | ['i1+o0o-1i']
+['i1-o0o+1i'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 3 | 0 :Spin-------
+integer | integral
+['-1io0oi1+'] | ['-1io0o+1i']
+['o1+o0o-1o'] | ['i1+o0o-1i']
+['-1io0o+1i'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 3 | 0 :Spin-------
+posineutral | neganeutral
+['-1io0oi1+'] | ['i1-o0o+1i']
+['-1+o0o-1+'] | ['+1-o0o+1-']
+       [None] | [None]
+_____________________
+-------Spin: 1 | 1 :Spin-------
+integer | integer
+[None] | [None]
+_____________________
+-------Spin: 1 | 1 :Spin-------
+integral | integral
+[None] | [None]
+_____________________
+-------Spin: 1 | 1 :Spin-------
+neganeutral | neganeutral
+[None] | [None]
+_____________________
+-------Spin: 1 | 1 :Spin-------
+posineutral | posineutral
+[None] | [None]
+_____________________
+-------Spin: 1 | 1 :Spin-------
+integer | neganeutral
+   ['i1+o0o1i'] | ['o1-o0o+1o']
+       [None] | [None]
+['+1io0o-1i'] | ['+1io0oi1-']
+_____________________
+-------Spin: 1 | 1 :Spin-------
+integral | posineutral
+['o1+o0o-1o'] | ['i1+o0o-1i']
+['i1+o0o-1i'] | ['-1+o0o-1+']
+['+1io0o-1i'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 1 | 1 :Spin-------
+integer | posineutral
+   ['i1+o0o1i'] | ['i1+o0o-1i']
+        ['-2+'] | ['-2+']
+['+1io0o-1i'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 1 | 1 :Spin-------
+integral | neganeutral
+['o1+o0o-1o'] | ['o1-o0o+1o']
+['i1+o0o-1i'] | ['+1-o0o+1-']
+['+1io0o-1i'] | ['+1io0oi1-']
+_____________________
+-------Spin: 1 | 1 :Spin-------
+neganeutral | integer
+['o1-o0o+1o'] | ['i1+o0o1i']
+       [None] | [None]
+['+1io0oi1-'] | ['+1io0o-1i']
+_____________________
+-------Spin: 1 | 1 :Spin-------
+posineutral | integral
+['i1+o0o-1i'] | ['o1+o0o-1o']
+['-1+o0o-1+'] | ['i1+o0o-1i']
+['-1oo0oo1+'] | ['+1io0o-1i']
+_____________________
+-------Spin: 1 | 1 :Spin-------
+posineutral | integer
+['i1+o0o-1i'] | ['i1+o0o1i']
+       [None] | [None]
+['-1oo0oo1+'] | ['+1io0o-1i']
+_____________________
+-------Spin: 1 | 1 :Spin-------
+neganeutral | integral
+['o1-o0o+1o'] | ['o1+o0o-1o']
+['+1-o0o+1-'] | ['i1+o0o-1i']
+['+1io0oi1-'] | ['+1io0o-1i']
+_____________________
+-------Spin: 1 | 1 :Spin-------
+integer | integral
+   ['i1+o0o1i'] | ['o1+o0o-1o']
+['o1+o0o-1o'] | ['i1+o0o-1i']
+       [None] | [None]
+_____________________
+-------Spin: 1 | 1 :Spin-------
+posineutral | neganeutral
+['i1+o0o-1i'] | ['o1-o0o+1o']
+['-1+o0o-1+'] | ['+1-o0o+1-']
+['-1oo0oo1+'] | ['+1io0oi1-']
+_____________________
+-------Spin: 2 | 1 :Spin-------
+integer | integer
+['+1-o0o-1+'] | ['i1+o0o1i']
+       [None] | [None]
+['i1+o0o-1i'] | ['+1io0o-1i']
+_____________________
+-------Spin: 2 | 1 :Spin-------
+integral | integral
+['+1io0o-1i'] | ['o1+o0o-1o']
+       [None] | [None]
+['o1+o0o-1o'] | ['+1io0o-1i']
+_____________________
+-------Spin: 2 | 1 :Spin-------
+neganeutral | neganeutral
+['+1io0oi1-'] | ['o1-o0o+1o']
+       [None] | [None]
+['o1-o0o+1o'] | ['+1io0oi1-']
+_____________________
+-------Spin: 2 | 1 :Spin-------
+posineutral | posineutral
+['-1oo0oo1+'] | ['i1+o0o-1i']
+       [None] | [None]
+['i1+o0o-1i'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 2 | 1 :Spin-------
+integer | neganeutral
+       [None] | [None]
+       [None] | [None]
+['i1+o0o-1i'] | ['+1io0oi1-']
+_____________________
+-------Spin: 2 | 1 :Spin-------
+integral | posineutral
+['+1io0o-1i'] | ['i1+o0o-1i']
+['i1+o0o-1i'] | ['-1+o0o-1+']
+        ['-2o'] | ['-2o']
+_____________________
+-------Spin: 2 | 1 :Spin-------
+integer | posineutral
+['+1-o0o-1+'] | ['i1+o0o-1i']
+        ['-2+'] | ['-2+']
+['i1+o0o-1i'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 2 | 1 :Spin-------
+integral | neganeutral
+['+1io0o-1i'] | ['o1-o0o+1o']
+['i1+o0o-1i'] | ['+1-o0o+1-']
+['o1+o0o-1o'] | ['+1io0oi1-']
+_____________________
+-------Spin: 2 | 1 :Spin-------
+neganeutral | integer
+['+1io0oi1-'] | ['i1+o0o1i']
+       [None] | [None]
+['o1-o0o+1o'] | ['+1io0o-1i']
+_____________________
+-------Spin: 2 | 1 :Spin-------
+posineutral | integral
+       [None] | [None]
+['-1+o0o-1+'] | ['i1+o0o-1i']
+['i1+o0o-1i'] | ['+1io0o-1i']
+_____________________
+-------Spin: 2 | 1 :Spin-------
+posineutral | integer
+['-1oo0oo1+'] | ['i1+o0o1i']
+       [None] | [None]
+['i1+o0o-1i'] | ['+1io0o-1i']
+_____________________
+-------Spin: 2 | 1 :Spin-------
+neganeutral | integral
+['+1io0oi1-'] | ['o1+o0o-1o']
+['+1-o0o+1-'] | ['i1+o0o-1i']
+['o1-o0o+1o'] | ['+1io0o-1i']
+_____________________
+-------Spin: 2 | 1 :Spin-------
+integer | integral
+       [None] | [None]
+['o1+o0o-1o'] | ['i1+o0o-1i']
+['i1+o0o-1i'] | ['+1io0o-1i']
+_____________________
+-------Spin: 2 | 1 :Spin-------
+posineutral | neganeutral
+       [None] | [None]
+['-1+o0o-1+'] | ['+1-o0o+1-']
+['i1+o0o-1i'] | ['+1io0oi1-']
+_____________________
+-------Spin: 3 | 1 :Spin-------
+integer | integer
+['-1io0oi1+'] | ['i1+o0o1i']
+       [None] | [None]
+['-1io0o+1i'] | ['+1io0o-1i']
+_____________________
+-------Spin: 3 | 1 :Spin-------
+integral | integral
+       [None] | [None]
+       [None] | [None]
+['-1io0o+1i'] | ['+1io0o-1i']
+_____________________
+-------Spin: 3 | 1 :Spin-------
+neganeutral | neganeutral
+        ['-1-'] | ['-1-']
+       [None] | [None]
+['i1-o0o+1i'] | ['+1io0oi1-']
+_____________________
+-------Spin: 3 | 1 :Spin-------
+posineutral | posineutral
+['-1io0oi1+'] | ['i1+o0o-1i']
+       [None] | [None]
+        ['-2o'] | ['-2o']
+_____________________
+-------Spin: 3 | 1 :Spin-------
+integer | neganeutral
+['-1io0oi1+'] | ['o1-o0o+1o']
+       [None] | [None]
+['-1io0o+1i'] | ['+1io0oi1-']
+_____________________
+-------Spin: 3 | 1 :Spin-------
+integral | posineutral
+['-1oo0oo1+'] | ['i1+o0o-1i']
+['i1+o0o-1i'] | ['-1+o0o-1+']
+['-1io0o+1i'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 3 | 1 :Spin-------
+integer | posineutral
+['-1io0oi1+'] | ['i1+o0o-1i']
+        ['-2+'] | ['-2+']
+['-1io0o+1i'] | ['-1oo0oo1+']
+_____________________
+-------Spin: 3 | 1 :Spin-------
+integral | neganeutral
+       [None] | [None]
+['i1+o0o-1i'] | ['+1-o0o+1-']
+['-1io0o+1i'] | ['+1io0oi1-']
+_____________________
+-------Spin: 3 | 1 :Spin-------
+neganeutral | integer
+['+1oo0oo1-'] | ['i1+o0o1i']
+       [None] | [None]
+['i1-o0o+1i'] | ['+1io0o-1i']
+_____________________
+-------Spin: 3 | 1 :Spin-------
+posineutral | integral
+['-1io0oi1+'] | ['o1+o0o-1o']
+['-1+o0o-1+'] | ['i1+o0o-1i']
+['o1+o0o-1o'] | ['+1io0o-1i']
+_____________________
+-------Spin: 3 | 1 :Spin-------
+posineutral | integer
+['-1io0oi1+'] | ['i1+o0o1i']
+       [None] | [None]
+['o1+o0o-1o'] | ['+1io0o-1i']
+_____________________
+-------Spin: 3 | 1 :Spin-------
+neganeutral | integral
+        ['-1+'] | ['-1+']
+['+1-o0o+1-'] | ['i1+o0o-1i']
+['i1-o0o+1i'] | ['+1io0o-1i']
+_____________________
+-------Spin: 3 | 1 :Spin-------
+integer | integral
+['-1io0oi1+'] | ['o1+o0o-1o']
+['o1+o0o-1o'] | ['i1+o0o-1i']
+['-1io0o+1i'] | ['+1io0o-1i']
+_____________________
+-------Spin: 3 | 1 :Spin-------
+posineutral | neganeutral
+['-1io0oi1+'] | ['o1-o0o+1o']
+['-1+o0o-1+'] | ['+1-o0o+1-']
+['o1+o0o-1o'] | ['+1io0oi1-']
+_____________________
+-------Spin: 1 | 2 :Spin-------
+integer | integer
+   ['i1+o0o1i'] | ['+1-o0o-1+']
+       [None] | [None]
+['+1io0o-1i'] | ['i1+o0o-1i']
+_____________________
+-------Spin: 1 | 2 :Spin-------
+integral | integral
+['o1+o0o-1o'] | ['+1io0o-1i']
+       [None] | [None]
+['+1io0o-1i'] | ['o1+o0o-1o']
+_____________________
+-------Spin: 1 | 2 :Spin-------
+neganeutral | neganeutral
+['o1-o0o+1o'] | ['+1io0oi1-']
+       [None] | [None]
+['+1io0oi1-'] | ['o1-o0o+1o']
+_____________________
+-------Spin: 1 | 2 :Spin-------
+posineutral | posineutral
+['i1+o0o-1i'] | ['-1oo0oo1+']
+       [None] | [None]
+['-1oo0oo1+'] | ['i1+o0o-1i']
+_____________________
+-------Spin: 1 | 2 :Spin-------
+integer | neganeutral
+   ['i1+o0o1i'] | ['+1io0oi1-']
+       [None] | [None]
+['+1io0o-1i'] | ['o1-o0o+1o']
+_____________________
+-------Spin: 1 | 2 :Spin-------
+integral | posineutral
+        ['-2o'] | ['-2o']
+['i1+o0o-1i'] | ['-1+o0o-1+']
+['+1io0o-1i'] | ['i1+o0o-1i']
+_____________________
+-------Spin: 1 | 2 :Spin-------
+integer | posineutral
+   ['i1+o0o1i'] | ['-1oo0oo1+']
+        ['-2+'] | ['-2+']
+['+1io0o-1i'] | ['i1+o0o-1i']
+_____________________
+-------Spin: 1 | 2 :Spin-------
+integral | neganeutral
+['o1+o0o-1o'] | ['+1io0oi1-']
+['i1+o0o-1i'] | ['+1-o0o+1-']
+['+1io0o-1i'] | ['o1-o0o+1o']
+_____________________
+-------Spin: 1 | 2 :Spin-------
+neganeutral | integer
+       [None] | [None]
+       [None] | [None]
+['+1io0oi1-'] | ['i1+o0o-1i']
+_____________________
+-------Spin: 1 | 2 :Spin-------
+posineutral | integral
+['i1+o0o-1i'] | ['+1io0o-1i']
+['-1+o0o-1+'] | ['i1+o0o-1i']
+       [None] | [None]
+_____________________
+-------Spin: 1 | 2 :Spin-------
+posineutral | integer
+['i1+o0o-1i'] | ['+1-o0o-1+']
+       [None] | [None]
+['-1oo0oo1+'] | ['i1+o0o-1i']
+_____________________
+-------Spin: 1 | 2 :Spin-------
+neganeutral | integral
+['o1-o0o+1o'] | ['+1io0o-1i']
+['+1-o0o+1-'] | ['i1+o0o-1i']
+['+1io0oi1-'] | ['o1+o0o-1o']
+_____________________
+-------Spin: 1 | 2 :Spin-------
+integer | integral
+   ['i1+o0o1i'] | ['+1io0o-1i']
+['o1+o0o-1o'] | ['i1+o0o-1i']
+['+1io0o-1i'] | ['o1+o0o-1o']
+_____________________
+-------Spin: 1 | 2 :Spin-------
+posineutral | neganeutral
+['i1+o0o-1i'] | ['+1io0oi1-']
+['-1+o0o-1+'] | ['+1-o0o+1-']
+       [None] | [None]
+_____________________
+-------Spin: 2 | 2 :Spin-------
+integer | integer
+['+1-o0o-1+'] | ['+1-o0o-1+']
+       [None] | [None]
+       [None] | [None]
+_____________________
+-------Spin: 2 | 2 :Spin-------
+integral | integral
+[None] | [None]
+_____________________
+-------Spin: 2 | 2 :Spin-------
+neganeutral | neganeutral
+[None] | [None]
+_____________________
+-------Spin: 2 | 2 :Spin-------
+posineutral | posineutral
+[None] | [None]
+_____________________
+-------Spin: 2 | 2 :Spin-------
+integer | neganeutral
+['+1-o0o-1+'] | ['+1io0oi1-']
+       [None] | [None]
+['i1+o0o-1i'] | ['o1-o0o+1o']
+_____________________
+-------Spin: 2 | 2 :Spin-------
+integral | posineutral
+['+1io0o-1i'] | ['-1oo0oo1+']
+['i1+o0o-1i'] | ['-1+o0o-1+']
+['o1+o0o-1o'] | ['i1+o0o-1i']
+_____________________
+-------Spin: 2 | 2 :Spin-------
+integer | posineutral
+['+1-o0o-1+'] | ['-1oo0oo1+']
+        ['-2+'] | ['-2+']
+       [None] | [None]
+_____________________
+-------Spin: 2 | 2 :Spin-------
+integral | neganeutral
+['+1io0o-1i'] | ['+1io0oi1-']
+['i1+o0o-1i'] | ['+1-o0o+1-']
+['o1+o0o-1o'] | ['o1-o0o+1o']
+_____________________
+-------Spin: 2 | 2 :Spin-------
+neganeutral | integer
+['+1io0oi1-'] | ['+1-o0o-1+']
+       [None] | [None]
+['o1-o0o+1o'] | ['i1+o0o-1i']
+_____________________
+-------Spin: 2 | 2 :Spin-------
+posineutral | integral
+['-1oo0oo1+'] | ['+1io0o-1i']
+['-1+o0o-1+'] | ['i1+o0o-1i']
+['i1+o0o-1i'] | ['o1+o0o-1o']
+_____________________
+-------Spin: 2 | 2 :Spin-------
+posineutral | integer
+['-1oo0oo1+'] | ['+1-o0o-1+']
+       [None] | [None]
+       [None] | [None]
+_____________________
+-------Spin: 2 | 2 :Spin-------
+neganeutral | integral
+['+1io0oi1-'] | ['+1io0o-1i']
+['+1-o0o+1-'] | ['i1+o0o-1i']
+['o1-o0o+1o'] | ['o1+o0o-1o']
+_____________________
+-------Spin: 2 | 2 :Spin-------
+integer | integral
+['+1-o0o-1+'] | ['+1io0o-1i']
+['o1+o0o-1o'] | ['i1+o0o-1i']
+['i1+o0o-1i'] | ['o1+o0o-1o']
+_____________________
+-------Spin: 2 | 2 :Spin-------
+posineutral | neganeutral
+['-1oo0oo1+'] | ['+1io0oi1-']
+['-1+o0o-1+'] | ['+1-o0o+1-']
+['i1+o0o-1i'] | ['o1-o0o+1o']
+_____________________
+-------Spin: 3 | 2 :Spin-------
+integer | integer
+['-1io0oi1+'] | ['+1-o0o-1+']
+       [None] | [None]
+['-1io0o+1i'] | ['i1+o0o-1i']
+_____________________
+-------Spin: 3 | 2 :Spin-------
+integral | integral
+['-1oo0oo1+'] | ['+1io0o-1i']
+       [None] | [None]
+['-1io0o+1i'] | ['o1+o0o-1o']
+_____________________
+-------Spin: 3 | 2 :Spin-------
+neganeutral | neganeutral
+['+1oo0oo1-'] | ['+1io0oi1-']
+       [None] | [None]
+['i1-o0o+1i'] | ['o1-o0o+1o']
+_____________________
+-------Spin: 3 | 2 :Spin-------
+posineutral | posineutral
+['-1io0oi1+'] | ['-1oo0oo1+']
+       [None] | [None]
+['o1+o0o-1o'] | ['i1+o0o-1i']
+_____________________
+-------Spin: 3 | 2 :Spin-------
+integer | neganeutral
+['-1io0oi1+'] | ['+1io0oi1-']
+       [None] | [None]
+['-1io0o+1i'] | ['o1-o0o+1o']
+_____________________
+-------Spin: 3 | 2 :Spin-------
+integral | posineutral
+       [None] | [None]
+['i1+o0o-1i'] | ['-1+o0o-1+']
+['-1io0o+1i'] | ['i1+o0o-1i']
+_____________________
+-------Spin: 3 | 2 :Spin-------
+integer | posineutral
+['-1io0oi1+'] | ['-1oo0oo1+']
+        ['-2+'] | ['-2+']
+['-1io0o+1i'] | ['i1+o0o-1i']
+_____________________
+-------Spin: 3 | 2 :Spin-------
+integral | neganeutral
+['-1oo0oo1+'] | ['+1io0oi1-']
+['i1+o0o-1i'] | ['+1-o0o+1-']
+['-1io0o+1i'] | ['o1-o0o+1o']
+_____________________
+-------Spin: 3 | 2 :Spin-------
+neganeutral | integer
+['+1oo0oo1-'] | ['+1-o0o-1+']
+       [None] | [None]
+['i1-o0o+1i'] | ['i1+o0o-1i']
+_____________________
+-------Spin: 3 | 2 :Spin-------
+posineutral | integral
+['-1io0oi1+'] | ['+1io0o-1i']
+['-1+o0o-1+'] | ['i1+o0o-1i']
+       [None] | [None]
+_____________________
+-------Spin: 3 | 2 :Spin-------
+posineutral | integer
+['-1io0oi1+'] | ['+1-o0o-1+']
+       [None] | [None]
+['o1+o0o-1o'] | ['i1+o0o-1i']
+_____________________
+-------Spin: 3 | 2 :Spin-------
+neganeutral | integral
+['+1oo0oo1-'] | ['+1io0o-1i']
+['+1-o0o+1-'] | ['i1+o0o-1i']
+['i1-o0o+1i'] | ['o1+o0o-1o']
+_____________________
+-------Spin: 3 | 2 :Spin-------
+integer | integral
+['-1io0oi1+'] | ['+1io0o-1i']
+['o1+o0o-1o'] | ['i1+o0o-1i']
+['-1io0o+1i'] | ['o1+o0o-1o']
+_____________________
+-------Spin: 3 | 2 :Spin-------
+posineutral | neganeutral
+['-1io0oi1+'] | ['+1io0oi1-']
+['-1+o0o-1+'] | ['+1-o0o+1-']
+['o1+o0o-1o'] | ['o1-o0o+1o']
+_____________________
+-------Spin: 1 | 3 :Spin-------
+integer | integer
+   ['i1+o0o1i'] | ['-1io0oi1+']
+       [None] | [None]
+['+1io0o-1i'] | ['-1io0o+1i']
+_____________________
+-------Spin: 1 | 3 :Spin-------
+integral | integral
+        ['-2o'] | ['-2o']
+       [None] | [None]
+['+1io0o-1i'] | ['-1io0o+1i']
+_____________________
+-------Spin: 1 | 3 :Spin-------
+neganeutral | neganeutral
+       [None] | [None]
+       [None] | [None]
+['+1io0oi1-'] | ['i1-o0o+1i']
+_____________________
+-------Spin: 1 | 3 :Spin-------
+posineutral | posineutral
+['i1+o0o-1i'] | ['-1io0oi1+']
+       [None] | [None]
+       [None] | [None]
+_____________________
+-------Spin: 1 | 3 :Spin-------
+integer | neganeutral
+   ['i1+o0o1i'] | ['+1oo0oo1-']
+       [None] | [None]
+['+1io0o-1i'] | ['i1-o0o+1i']
+_____________________
+-------Spin: 1 | 3 :Spin-------
+integral | posineutral
+['o1+o0o-1o'] | ['-1io0oi1+']
+['i1+o0o-1i'] | ['-1+o0o-1+']
+['+1io0o-1i'] | ['o1+o0o-1o']
+_____________________
+-------Spin: 1 | 3 :Spin-------
+integer | posineutral
+   ['i1+o0o1i'] | ['-1io0oi1+']
+        ['-2+'] | ['-2+']
+['+1io0o-1i'] | ['o1+o0o-1o']
+_____________________
+-------Spin: 1 | 3 :Spin-------
+integral | neganeutral
+       [None] | [None]
+['i1+o0o-1i'] | ['+1-o0o+1-']
+['+1io0o-1i'] | ['i1-o0o+1i']
+_____________________
+-------Spin: 1 | 3 :Spin-------
+neganeutral | integer
+['o1-o0o+1o'] | ['-1io0oi1+']
+       [None] | [None]
+['+1io0oi1-'] | ['-1io0o+1i']
+_____________________
+-------Spin: 1 | 3 :Spin-------
+posineutral | integral
+['i1+o0o-1i'] | ['-1oo0oo1+']
+['-1+o0o-1+'] | ['i1+o0o-1i']
+['-1oo0oo1+'] | ['-1io0o+1i']
+_____________________
+-------Spin: 1 | 3 :Spin-------
+posineutral | integer
+['i1+o0o-1i'] | ['-1io0oi1+']
+       [None] | [None]
+['-1oo0oo1+'] | ['-1io0o+1i']
+_____________________
+-------Spin: 1 | 3 :Spin-------
+neganeutral | integral
+       [None] | [None]
+['+1-o0o+1-'] | ['i1+o0o-1i']
+['+1io0oi1-'] | ['-1io0o+1i']
+_____________________
+-------Spin: 1 | 3 :Spin-------
+integer | integral
+   ['i1+o0o1i'] | ['-1oo0oo1+']
+['o1+o0o-1o'] | ['i1+o0o-1i']
+['+1io0o-1i'] | ['-1io0o+1i']
+_____________________
+-------Spin: 1 | 3 :Spin-------
+posineutral | neganeutral
+['i1+o0o-1i'] | ['+1oo0oo1-']
+['-1+o0o-1+'] | ['+1-o0o+1-']
+['-1oo0oo1+'] | ['i1-o0o+1i']
+_____________________
+-------Spin: 3 | 3 :Spin-------
+integer | integer
+[None] | [None]
+_____________________
+-------Spin: 3 | 3 :Spin-------
+integral | integral
+[None] | [None]
+_____________________
+-------Spin: 3 | 3 :Spin-------
+neganeutral | neganeutral
+[None] | [None]
+_____________________
+-------Spin: 3 | 3 :Spin-------
+posineutral | posineutral
+[None] | [None]
+_____________________
+-------Spin: 3 | 3 :Spin-------
+integer | neganeutral
+['-1io0oi1+'] | ['+1oo0oo1-']
+       [None] | [None]
+['-1io0o+1i'] | ['i1-o0o+1i']
+_____________________
+-------Spin: 3 | 3 :Spin-------
+integral | posineutral
+['-1oo0oo1+'] | ['-1io0oi1+']
+['i1+o0o-1i'] | ['-1+o0o-1+']
+['-1io0o+1i'] | ['o1+o0o-1o']
+_____________________
+-------Spin: 3 | 3 :Spin-------
+integer | posineutral
+       [None] | [None]
+        ['-2+'] | ['-2+']
+['-1io0o+1i'] | ['o1+o0o-1o']
+_____________________
+-------Spin: 3 | 3 :Spin-------
+integral | neganeutral
+['-1oo0oo1+'] | ['+1oo0oo1-']
+['i1+o0o-1i'] | ['+1-o0o+1-']
+['-1io0o+1i'] | ['i1-o0o+1i']
+_____________________
+-------Spin: 3 | 3 :Spin-------
+neganeutral | integer
+['+1oo0oo1-'] | ['-1io0oi1+']
+       [None] | [None]
+['i1-o0o+1i'] | ['-1io0o+1i']
+_____________________
+-------Spin: 3 | 3 :Spin-------
+posineutral | integral
+['-1io0oi1+'] | ['-1oo0oo1+']
+['-1+o0o-1+'] | ['i1+o0o-1i']
+['o1+o0o-1o'] | ['-1io0o+1i']
+_____________________
+-------Spin: 3 | 3 :Spin-------
+posineutral | integer
+       [None] | [None]
+       [None] | [None]
+['o1+o0o-1o'] | ['-1io0o+1i']
+_____________________
+-------Spin: 3 | 3 :Spin-------
+neganeutral | integral
+['+1oo0oo1-'] | ['-1oo0oo1+']
+['+1-o0o+1-'] | ['i1+o0o-1i']
+['i1-o0o+1i'] | ['-1io0o+1i']
+_____________________
+-------Spin: 3 | 3 :Spin-------
+integer | integral
+['-1io0oi1+'] | ['-1oo0oo1+']
+['o1+o0o-1o'] | ['i1+o0o-1i']
+       [None] | [None]
+_____________________
+-------Spin: 3 | 3 :Spin-------
+posineutral | neganeutral
+['-1io0oi1+'] | ['+1oo0oo1-']
+['-1+o0o-1+'] | ['+1-o0o+1-']
+['o1+o0o-1o'] | ['i1-o0o+1i']
+_____________________

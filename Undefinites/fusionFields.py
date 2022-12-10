@@ -6,38 +6,70 @@ class Fussion:
         # (++) and (--) cannot fuse without acceleration or another Field force acting on it
         self._fieldA = fieldA
         self._fieldB = fieldB
+        self._newField = []
         self._length = len([*zip(self._fieldA, self._fieldB)])
         self._startingCount = 0
+        self._attachedField = ""
         self._poles = {
-            "+-": "+-",
-            "-+": "-+",
-            "o+": "+",
-            "o-": "-",
-            "-o": "-",
-            "+o": "+",
-            "i+": "+",
-            "i-": "-",
-            "-i": "-",
-            "+i": "+",
-            "--": "--",
-            "++": "++"
+            "+-": "-",
+            "-+": "+"
         }
 
     def startExistance(self):
         # print(self.__dir__())
+        lenCheck = 0
         reconstructedA = []
         reconstructedB = []
+        newField = []
+        constructedNew = []
         while self._startingCount < self._length:
             check = self.attchachBases()
             if check:
-                web = check
+                col = check
             else:
-                web = self.checkConnections()
-            reconstructedA.append(web[0])
-            reconstructedB.append(web[-1])
+                web, lenCheck = self.checkConnections()
+                if lenCheck == 2:
+                    col1 = web[0]
+                    col2 = web[-1]
+                    col = [col1, col2]
+                elif lenCheck == 1:
+                    col = web
+                if len(col) == 1:
+                    newField.append(col)
+            if type(col) == list or type(col) == tuple:
+                reconstructedA.append([col[0]])
+                reconstructedB.append([col[-1]])
+            if newField != []:
+                constructedNew.append(col)
             self.moveExistance()
-        self._fieldA = reconstructedA
-        self._fieldB = reconstructedB
+        if newField != []:
+            newFieldReturn = False
+            for x in constructedNew:
+                if len(x) != 1:
+                    self._newField.append(x)
+                elif len(x) == 1:
+                    self._newField.append(x)
+                    newFieldReturn = True
+            if newFieldReturn:
+                pass
+            else:
+                self._newField = []
+        else:
+            if reconstructedA == [[None], [None], [None]]:
+                self._fieldA = [None]
+                self._fieldB = [None]
+            elif reconstructedA[0] == [None] and reconstructedA[-1] == [None] and reconstructedA[1] != [None]:
+                self._fieldA = reconstructedA[1]
+                self._fieldB = reconstructedA[1]
+            elif reconstructedA[0] == [None] and reconstructedA[1] == [None] and reconstructedA[-1] != [None]:
+                self._fieldA = reconstructedA[-1]
+                self._fieldB = reconstructedB[-1]
+            elif reconstructedA[0] != [None] and reconstructedA[1] == [None] and reconstructedA[-1] == [None]:
+                self._fieldA = reconstructedA[0]
+                self._fieldB = reconstructedB[0]
+            else:
+                self._fieldA = reconstructedA
+                self._fieldB = reconstructedB
 
     def moveExistance(self):
         self._startingCount += 1
@@ -47,161 +79,66 @@ class Fussion:
         baseB = self._fieldB[self._startingCount][0]
         if baseA == baseB:
             if baseA[0]+baseA[-1] in self._poles.keys() and baseA[0] != baseA[-1]:
-                return [None], [None]
+                return None, None
             elif baseA[0] == "i" and baseA[-1] == "i" and baseA[2]+baseA[-3] in self._poles.keys():
-                return [None], [None]
+                return None, None
             elif baseA[0] == "o" and baseA[-1] == "o" and baseA[2]+baseA[-3] in self._poles.keys():
-                return [None], [None]
+                return None, None
         self._attachedField = self._fieldA[self._startingCount][0] + self._fieldB[self._startingCount][0]
 
     def checkConnections(self):
         fieldA = []
         fieldB = []
         fieldLength = self._length
-        vector = self._attachedField
+        vector = checkVector = self._attachedField
         idx = self.fetchIdx()
-        if type(vector) != tuple:
-            if vector[idx:idx + 2] in self._poles.keys():
-                newDelimiter = self._poles[vector[idx:idx + 2]]
-                if newDelimiter == vector[idx:idx + 2]:
-                    return self._fieldA[self._startingCount], self._fieldB[self._startingCount]
-            returnVector = self.processFusion()
-            if "=" == vector[idx] and vector[idx + 1] == vector[idx] - 1:
-                fields = self.processEquates("=")
-            elif "=" in vector and vector[idx] == "-":
-                fields = self.processEquates("-")
-            elif "=" in vector and vector[idx] == "+":
-                fields = self.processEquates("+")
-            elif [x for x in range(len(vector) -1) if vector[x] == "+" and vector[x+1] == "-" or vector[x]\
-                    == "-" and vector[x+1] == "+"]:
-                fields = self.processEquates("=")
-            elif "0+0" in vector:
-                fields = self.negation()
-            else:
-                def findIdx(vector):
-                    n = 0
-                    while n < len(vector):
-                        if vector[0:idx+n][0] == "i" and vector[0:idx+n][-1] == "i" or \
-                            vector[0:idx+n][0] == "o" and vector[0:idx+n][-1] == "o":
-                            return n
-                        elif vector[0:idx+n][0] + vector[0:idx+n][-1] in self._poles.keys():
-                            return n
-                        n += 1
-                n = findIdx(vector)
-                fields = vector[0:idx+n], vector[idx+n::]
-            if returnVector != vector:
-                fields = returnVector
-            if type(fields) == list or type(fields) == tuple:
-                # fieldA = [fields[0]]
-                # fieldB = [fields[-1]]
-                if type(fields[0]) == list: 
-                    if [None] in fields[0]: felidA = fields[0]
-                elif  type(fields[-1]) == list:
-                    if[None] in fields[-1]: fieldB = fields[-1]
-                else: fieldB, fieldA = [fields[-1]], [fields[0]]
-            else:
-                fieldA = self._fieldA[self._startingCount]
-                fieldB = self._fieldB[self._startingCount]
-
-        return fieldA, fieldB
-
-
-    def mergeNeighboringEquals(self):
-        if x.isDigit() and y.isDigit() and x == y:
-            return x
-
-    def processEquates(self, equator):
-        idx = self.fetchIdx()
-        if len(equator) != 1:
-            preDex = idx -1
-            sufDex = idx + 1
+        newVector = self.checkSymetry(vector)
+        print("NEW", newVector)
+        if newVector != checkVector and newVector != None:
+            self.check0s(newVector)
+            return newVector, len(newVector)
+        elif newVector != None:
+            return newVector, len(newVector)
+        elif newVector == None:
+            return newVector, 0
         else:
-            preDex = idx
-            sufDex = idx
-        attachedField = self._attachedField[0:preDex] + self._attachedField[sufDex + 1::]
-        if attachedField != (None, None):
-            attachedField = self.symetricalNegation(idx)
-        if attachedField != (None, None):
-            attachedField = self.pattern(idx)
-        if len(attachedField) == 2:
-            _fieldA = attachedField[0]
-            _fieldB = attachedField[-1]
-            return _fieldA, _fieldB
-        else:
-            return attachedField
-
-    def checkForZero(self, vector):
-        if vector != self.symetricalNegation(vector):
-            return self.symetricalNegation(vector)
-        return vector
-
-    def processFusion(self):
-        vector = check = self._attachedField
-        idx = self._fetchIdx()
-        if vector[idx:idx+2] in self._poles.keys():
-            newDelimiter = self._poles[vector[idx:idx+2]]
-            vector = vector[0:idx] + newDelimiter + vector[idx+2::]
-            newIdx = int(len(vector)/2)
-            center = vector[newIdx-2:newIdx+2]
-            numbers = []
-            for v in range(len(center)):
-                if center[v].isdigit() and center[v-1] == "-" or center[v].isdigit() and center[v-1] == "+":
-                    numbers.append(int(center[v-1:v+1]))
-            newValue = sum(numbers)
-            if newValue == 0:
-                vector = vector[0:newIdx-2] + vector[newIdx+2::]
-            else:
-                vector = vector[0:newIdx-2] + f"{newValue}" + vector[newIdx+2::]
-            newIdx = int(len(vector)/2)
-            if not vector[newIdx].isdigit():
-                check = self.checkForZero(vector)
-            elif vector[newIdx].isdigit():
-                newVector = vector[0:newIdx] + vector[newIdx+2::]
-                vectorCheck = self.symetricalNegation(newVector)
-                if vectorCheck == (None, None):
-                    return vector[newIdx-1:newIdx+2], vector[newIdx-1:newIdx+2]
-            if vector != self._attachedField:
-                if check != vector:
-                    return check
-                return vector
-            else:
-                return self._attachedField
-
-    def negation(self, vector = False):
-        if vector == False:
-            vector = self._attachedField
-        if "0+0" in vector:
-            self._attachedField = pattern(self._attachedField, "0+0")
-        if self._attachedField == (None, None):
-            return
-        else:
-            print("FUCK")
-
-    def symetricalNegation(self, idx):
-        if type(idx) == str:
-            vector = idx
-            self._fetchIdx(vector = vector)
-            idx = self.fetchIdx()
-            self.resetIdxFetch
-        attachedField = self._attachedField
-        leftSide = attachedField[0:idx]
-        rightSide = attachedField[idx::]
-        for l, r in zip(leftSide, rightSide[::-1]):
-            if l == None and r == None:
-                return attachedField
-            if l == "+" and r == "-" or l == "-" and r == "+" or l == "o" and r == "-" or l=="-" and r=="o" or \
-                l=="+" and r=="o" or l=="o" and r=="+":
-                pass
-            elif l != r:
-                return attachedField
-        return None, None
-
-    def pattern(self, idx):
-        idx = self.fetchIdx
-        if self._attachedField[0:idx] == "".join(reversed(self._attachedField[idx::])):
             return None, None
+
+    def check0s(self, vector):
+        zeroSymbol = "o0o"
+        if zeroSymbol in vector:
+            newVector = "".join(vector.split(zeroSymbol))
+            print(newVector)
+
+    def checkSymetry(self, vector):
+        nonRationalablePairs = ["--", "++", "io", "oi", "-i", "+i", "i-", "i+", "-o", "+o", "o-", "o+"]
+        rationalablePairs = ["-+", "+-", "ii", "oo"]
+        if len(vector) % 2 == 0:
+            idx = int(len(vector)/2)
         else:
-            return self._attachedField
+            idx = int(len(vector)/2)
+        for x in range(0, idx):
+            if "".join([vector[idx-1-x], vector[idx+x]]) in nonRationalablePairs:
+                return vector[0:idx], vector[idx::]
+            if x == 2 and "".join([vector[idx-1], vector[idx]]) in rationalablePairs and \
+                "".join([vector[idx-1-x], vector[idx+x]]) in rationalablePairs:
+                if vector[idx-1-x] == "-" and vector[idx+x] == "+":
+                    print("HELLO")
+                    newValue = -int(vector[idx-x]) - int(vector[idx+1])
+                    newVector = vector[0:idx-1-x] + f"{newValue}+" + vector[idx+1+x::]
+                    exVector = "".join(newVector.split("o0o"))
+                    checker = [x for x in nonRationalablePairs if x in exVector]
+                    if checker != []:
+                        return [newVector]
+                elif vector[idx-1-x] == "+" and vector[idx+x] == "-":
+                    newValue = int(vector[idx-x]) + int(vector[idx+1])
+                    newVector = vector[0:idx-x] + f"{newValue}" + vector[idx+x::]
+                    return [newVector]
+                elif vector[idx-1-x] == "i" and vector[idx+x] == "i":
+                    newValue = int(vector[idx-x]) + int(vector[idx+1])
+                    newVector = vector[0:idx-x] + f"{newValue}" + vector[idx+x::]
+                    return [newVector]
+        return None
 
     @property
     def fetchIdx(self):
@@ -219,8 +156,12 @@ class Fussion:
     def resetIdxFetch(self):
         self._fetchIdx()
 
+    @property
+    def fetchNewField(self):
+        return self._newField
+
     def _fetchIdx(self, vector = False):
-        if not vector:
+        if vector == False:
             vector = self._attachedField
         if len(vector) % 2 == 0:
             return int(len(vector)/2)-1

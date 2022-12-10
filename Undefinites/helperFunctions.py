@@ -51,27 +51,34 @@ def rationalizeNumeral(numeral):
 
 
 class Depiction:
-    def __init__(self, field):
+    def __init__(self, field, spins, fieldType):
+        self._spins = spins
+        self._type = fieldType
         self._msg = "Howdy World"
         self._field = field
         self._unitsList = []
 
     def getSocioGraph(self):
-        import re
         if len(self._field) == 3:
             return f"{self._field[0]}\n{self._field[1]}\n{self._field[-1]}"
         elif len(self._field) == 2 and type(self._field[0][0]) == list:
-            f = self._field[0][0][0]
-            s = self._field[0][1][0]
-            t = self._field[0][-1][0]
+            if len(self._field[0]) == 3:
+                f = self._field[0][0][0]
+                s = self._field[0][1][0]
+                t = self._field[0][-1][0]
+            elif len(self._field[0]) == 1:
+                f = self._field[0]
+                s = self._field[0]
+                t = self._field[0]
+                return f"{self._field[0]} | {self._field[-1]}"
 
             # get field lengths
-            if f != None: fLen = len(f)
-            elif f == None: fLen = 4
-            if s != None: sLen = len(s)
-            elif s == None: sLen = 4
-            if t != None: tLen = len(t)
-            elif t == None: tLen = 4
+            if f != None: fLen = len(f) - 2
+            elif f == None: fLen = 2
+            if s != None: sLen = len(s) - 2
+            elif s == None: sLen = 2
+            if t != None: tLen = len(t) - 2
+            elif t == None: tLen = 2
             maxLen = max(fLen, sLen, tLen)
             if maxLen % 2 == 1: b = 0 # find space buffer
             elif maxLen % 1 == 0: b = 1
@@ -83,6 +90,18 @@ class Depiction:
             else: t = str.ljust(" ", int((maxLen - tLen +b)+2))
                         
             return f"{f}{self._field[0][0]} | {self._field[-1][0]}\n{s}{self._field[0][1]} | {self._field[-1][1]}\n{t}{self._field[0][-1]} | {self._field[-1][-1]}"
+        elif len(self._field) == 2 and len(self._field[0]) == 1:
+            return f"{self._field[0]} | {self._field[-1]}"
+
+    def writeFile(self, filename):
+        if filename[-3::] == "txt":
+            with open(filename, "a") as f:
+                print(self._spins[0])
+                f.write(self._spins + "\n")
+                f.write(f"{self._type[0]} | {self._type[-1]}")
+                f.write("\n")
+                f.write(self.fetchSocioGraph)
+                f.write("\n_____________________\n")
 
     def analyzeUnit(self, row):
         unitList = []
@@ -142,9 +161,13 @@ def B4NG(spinAlteration = [0, 1, 2, 3], timeValue = 0.25, size = 1, accelerate =
     if totalCycles == 10000000:
         print("10M")
 
-def depict(field):
-    depiction = Depiction(field)
-    print(depiction.fetchSocioGraph)
+def depict(field, spins, fT, write = False):
+    depiction = Depiction(field, spins, fT)
+    x = depiction.fetchSocioGraph
+    if write:
+        depiction.writeFile("models.txt")
+    elif not write:
+        print(x)
     print("-----------------------")
 
 
@@ -181,20 +204,37 @@ def FusionParticles(spinAlteration = [0, 1, 2, 3], timeValue = 0.25, size = 1, a
          ["posineutral", "integral"], ["posineutral", "integer"], ["neganeutral", "integral"], \
          ["integer", "integral"], ["posineutral", "neganeutral"]]
     
+    pos1 = 0
+    pos2 = 0
+    # while pos1 <= 3:
     for thing in x:
-        fieldType = RealField(3, size, timeValue, thing[0])
-        fieldType2 = RealField(2, size, timeValue, thing[-1])
+        fieldType = RealField(pos1, 3, timeValue, thing[0])
+        fieldType2 = RealField(pos2, 2, timeValue, thing[-1])
         field1 = fieldType.fetchField
         field2 = fieldType2.fetchField
-        depict([field1, field2])
+        print("______________________________")
+        print(thing)
+        print(f"-------Spin: {pos1} | {pos2} :Spin-------")
+        print("------------------------------")
+        depict([field1, field2], f"-------Spin: {pos1} | {pos2} :Spin-------", thing)
 
         fussionField = Fussion(field1, field2)
         fussionField.startExistance()
         field1 = fussionField.fetchFieldA
         field2 = fussionField.fetchFieldB
-        print(thing)
-        depict([field1, field2])
+        newField = fussionField.fetchNewField
+        if newField != []:
+            theField = newField
+        else:
+            theField = [field1, field2]
+        depict(theField, f"-------Spin: {pos1} | {pos2} :Spin-------", thing)
         print("  _-_-_-_-_-_-_")
         print("_-_-_-_-_-_-_-_-_")
         print(" -_-_-_-_-_-_-_- ")
         print("   - - - - - - ")
+        # if pos2 == 3:
+        #     pos1 += 1
+        # if pos1 == 3:
+        #     pos2 += 1
+        #     pos1 = 0
+        # pos1 += 1
