@@ -39,8 +39,7 @@ class Fussion:
             if type(col) == list or type(col) == tuple:
                 reconstructedA.append([col[0]])
                 reconstructedB.append([col[-1]])
-            if newField != []:
-                constructedNew.append(col)
+            constructedNew.append(col)
             self.moveExistance()
         if newField != []:
             newFieldReturn = False
@@ -93,9 +92,8 @@ class Fussion:
         vector = checkVector = self._attachedField
         idx = self.fetchIdx()
         newVector = self.checkSymetry(vector)
-        print("NEW", newVector)
-        if newVector != checkVector and newVector != None:
-            self.check0s(newVector)
+        if newVector != checkVector and newVector != None and len(newVector) == 1:
+            newVector = self.check0s(newVector)
             return newVector, len(newVector)
         elif newVector != None:
             return newVector, len(newVector)
@@ -106,9 +104,14 @@ class Fussion:
 
     def check0s(self, vector):
         zeroSymbol = "o0o"
-        if zeroSymbol in vector:
+        if zeroSymbol in vector[0]:
+            vector = vector[0]
             newVector = "".join(vector.split(zeroSymbol))
-            print(newVector)
+            newNewVector = self.checkSymetry(newVector)
+            if newNewVector != newVector:
+                return [newNewVector]
+            else:
+                return [vector]
 
     def checkSymetry(self, vector):
         nonRationalablePairs = ["--", "++", "io", "oi", "-i", "+i", "i-", "i+", "-o", "+o", "o-", "o+"]
@@ -117,27 +120,38 @@ class Fussion:
             idx = int(len(vector)/2)
         else:
             idx = int(len(vector)/2)
-        for x in range(0, idx):
-            if "".join([vector[idx-1-x], vector[idx+x]]) in nonRationalablePairs:
-                return vector[0:idx], vector[idx::]
-            if x == 2 and "".join([vector[idx-1], vector[idx]]) in rationalablePairs and \
-                "".join([vector[idx-1-x], vector[idx+x]]) in rationalablePairs:
-                if vector[idx-1-x] == "-" and vector[idx+x] == "+":
-                    print("HELLO")
-                    newValue = -int(vector[idx-x]) - int(vector[idx+1])
-                    newVector = vector[0:idx-1-x] + f"{newValue}+" + vector[idx+1+x::]
-                    exVector = "".join(newVector.split("o0o"))
-                    checker = [x for x in nonRationalablePairs if x in exVector]
-                    if checker != []:
+        if len(vector) % 2 == 0:
+            for x in range(0, idx):
+                if "".join([vector[idx-1-x], vector[idx+x]]) in nonRationalablePairs:
+                    return vector[0:idx], vector[idx::]
+                if x == 2 and "".join([vector[idx-1], vector[idx]]) in rationalablePairs and \
+                    "".join([vector[idx-1-x], vector[idx+x]]) in rationalablePairs:
+                    if vector[idx-1-x] == "-" and vector[idx+x] == "+":
+                        newValue = -int(vector[idx-x]) - int(vector[idx+1])
+                        newVector = vector[0:idx-1-x] + f"{newValue}+" + vector[idx+1+x::]
                         return [newVector]
-                elif vector[idx-1-x] == "+" and vector[idx+x] == "-":
-                    newValue = int(vector[idx-x]) + int(vector[idx+1])
-                    newVector = vector[0:idx-x] + f"{newValue}" + vector[idx+x::]
-                    return [newVector]
-                elif vector[idx-1-x] == "i" and vector[idx+x] == "i":
-                    newValue = int(vector[idx-x]) + int(vector[idx+1])
-                    newVector = vector[0:idx-x] + f"{newValue}" + vector[idx+x::]
-                    return [newVector]
+                    elif vector[idx-1-x] == "+" and vector[idx+x] == "-":
+                        newValue = int(vector[idx-x]) + int(vector[idx+1])
+                        newVector = vector[0:idx-x] + f"{newValue}" + vector[idx+x::]
+                        return [newVector]
+                    elif vector[idx-1-x] == "i" and vector[idx+x] == "i" or vector[idx-1-x] == "o" and vector[idx+x] == "o":
+                        newValue = int(vector[idx-x]) + int(vector[idx+1])
+                        newVector = vector[0:idx-x] + f"{newValue}" + vector[idx+x::]
+                        return [newVector]
+        else:
+            idx = idx +1
+            part1, part2, part3 = vector[0:3], vector[3:6], vector[6::]
+            if "".join([part1[-1], part2[0]]) in rationalablePairs and "".join([part2[-1], part3[0]]):
+                if "".join([part1[-1], part2[0]]) == "".join([part2[-1], part3[0]]):
+                    if "".join([part1[-1], part2[0]]) == "oo" or "".join([part1[-1], part2[0]]) == "ii":
+                        newPartA = "".join([part1[1], part1[0], part2[1], part3[-1], part3[1]])
+                        newSolution = sum([int(newPartA[0]), int(newPartA[1:3]), int(newPartA[3::])])
+                        return "".join([part1[0], f"{newSolution}", part3[-1]])
+                    else:
+                        newPartA = "".join([part1[1::], part2[1], part3[0:-1]])
+                        newSolution = sum([int(newPartA[0]), int(newPartA[1:3]), int(newPartA[3::])])
+                        return "".join([part1[0], f"{newSolution}", part3[-1]])
+               
         return None
 
     @property
